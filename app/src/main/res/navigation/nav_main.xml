@@ -9,5 +9,20 @@
         android:id="@+id/splashFragment"
         android:name="com.oratakashi.myquran.presentation.menu.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" />
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/anim_shrink_fade_in"
+            app:exitAnim="@anim/anim_shrink_fade_out"
+            app:popEnterAnim="@anim/anim_shrink_fade_in"
+            app:popExitAnim="@anim/anim_shrink_fade_out"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.oratakashi.myquran.presentation.menu.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>
