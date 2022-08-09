@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
-import com.agree.ecosystem.core.utils.R
+import com.oratakashi.myquran.R
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 
