@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="heading1" format="reference"/>
+    <attr name="heading2" format="reference"/>
+    <attr name="heading3" format="reference"/>
+    <attr name="heading4" format="reference"/>
+    <attr name="heading5" format="reference"/>
+    <attr name="heading6" format="reference"/>
+    <attr name="bodyUtsmaniRegular" format="reference"/>
+    <attr name="bodyLargeRegular" format="reference"/>
+    <attr name="bodyLargeMedium" format="reference"/>
+    <attr name="bodyLargeSemiBold" format="reference"/>
+    <attr name="bodyLargeBold" format="reference"/>
+    <attr name="bodyLargeItalic" format="reference"/>
+    <attr name="bodySmallRegular" format="reference"/>
+    <attr name="bodySmallMedium" format="reference"/>
+    <attr name="bodySmallSemiBold" format="reference"/>
+    <attr name="bodySmallBold" format="reference"/>
+    <attr name="bodySmallItalic" format="reference"/>
+    <attr name="captionLargeRegular" format="reference"/>
+    <attr name="captionLargeSemiBold" format="reference"/>
+    <attr name="captionLargeBold" format="reference"/>
+    <attr name="captionLargeItalic" format="reference"/>
+    <attr name="captionSmallRegular" format="reference"/>
+    <attr name="captionSmallSemiBold" format="reference"/>
+    <attr name="captionSmallBold" format="reference"/>
+    <attr name="captionSmallItalic" format="reference"/>
+</resources>

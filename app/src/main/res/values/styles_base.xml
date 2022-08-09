@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary_press</item>
+        <item name="colorPrimary_hover">@color/colorPrimary_hover</item>
+        <item name="colorPrimary_press">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/black4</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary_press</item>
+        <item name="colorSecondary_hover">@color/colorSecondary_hover</item>
+        <item name="colorSecondary_press">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/black1</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
+        <item name="heading1">@style/Heading1</item>
+        <item name="heading2">@style/Heading2</item>
+        <item name="heading3">@style/Heading3</item>
+        <item name="heading4">@style/Heading4</item>
+        <item name="heading5">@style/Heading5</item>
+        <item name="heading6">@style/Heading6</item>
+
+        <item name="bodyLargeRegular">@style/BodyLargeRegular</item>
+        <item name="bodyLargeMedium">@style/BodyLargeMedium</item>
+        <item name="bodyLargeSemiBold">@style/BodyLargeSemiBold</item>
+        <item name="bodyLargeBold">@style/BodyLargeBold</item>
+        <item name="bodySmallRegular">@style/BodySmallRegular</item>
+        <item name="bodySmallMedium">@style/BodySmallMedium</item>
+        <item name="bodySmallSemiBold">@style/BodySmallSemiBold</item>
+        <item name="bodySmallBold">@style/BodySmallBold</item>
+        <item name="captionLargeRegular">@style/CaptionLargeRegular</item>
+        <item name="captionLargeSemiBold">@style/CaptionLargeSemiBold</item>
+        <item name="captionLargeBold">@style/CaptionLargeBold</item>
+        <item name="captionSmallRegular">@style/CaptionSmallRegular</item>
+        <item name="captionSmallSemiBold">@style/CaptionSmallSemiBold</item>
+        <item name="captionSmallBold">@style/CaptionSmallBold</item>
+
+        <item name="bodyUtsmaniRegular">@style/BodyUtsmaniRegular</item>
+    </style>
+</resources>

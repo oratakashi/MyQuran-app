@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorPrimary_hover" format="color" />
+    <attr name="colorPrimary_press" format="color" />
+    <attr name="colorSecondary_hover" format="color" />
+    <attr name="colorSecondary_press" format="color" />
+</resources>

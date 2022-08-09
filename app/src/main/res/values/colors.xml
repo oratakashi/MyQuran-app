@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#9DF3C4</color>
+    <color name="colorPrimary_hover">#62D2A2</color>
+    <color name="colorPrimary_press">#1FAB89</color>
+    <color name="colorSecondary">#D2F6C5</color>
+    <color name="colorSecondary_hover">#99F3BD</color>
+    <color name="colorSecondary_press">#99F3BD</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black1">#212121</color>
+    <color name="black2">#4D4D4D</color>
+    <color name="black3">#7A7A7A</color>
+    <color name="black4">#A6A6A6</color>
+    <color name="black5">#D3D3D3</color>
+    <color name="black6">#E9E9E9</color>
+    <color name="black7">#F4F4F4</color>
+
+</resources>
