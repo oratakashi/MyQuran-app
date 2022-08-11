@@ -1,5 +1,11 @@
 package com.oratakashi.myquran.domain.model.surah
 
+import android.os.Parcelable
+import androidx.annotation.Keep
+import kotlinx.parcelize.Parcelize
+
+@Keep
+@Parcelize
 data class Surah(
     val keterangan: String,
     val rukuk: String,
@@ -11,4 +17,4 @@ data class Surah(
     val audio: String,
     val type: String,
     val nomor: String
-)
+): Parcelable

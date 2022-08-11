@@ -24,5 +24,22 @@
         android:id="@+id/mainFragment"
         android:name="com.oratakashi.myquran.presentation.menu.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.oratakashi.myquran.presentation.menu.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="data"
+            app:argType="com.oratakashi.myquran.domain.model.surah.Surah" />
+    </fragment>
 </navigation>
