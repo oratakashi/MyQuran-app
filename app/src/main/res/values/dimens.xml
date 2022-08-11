@@ -113,5 +113,7 @@
     <dimen name="dimen_10sp">10sp</dimen>
     <dimen name="dimen_8sp">8sp</dimen>
     <dimen name="dimen_6sp">6sp</dimen>
+    <dimen name="dimen_120dp">120dp</dimen>
+    <dimen name="dimen_220dp">220dp</dimen>
     <!--endregion SP (Text)-->
 </resources>

@@ -3,4 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_branding">Oratakashi.id</string>
+    <string name="label_salam">Assalamualaikum,</string>
+    <string name="label_greeting">Sudah mengaji hari ini?</string>
+    <string name="label_continue">Lanjutkan</string>
+    <string name="label_surah_list">Daftar Surah</string>
+    <string name="placeholder_surah_desc">%1$s - %2$s Ayat</string>
 </resources>
