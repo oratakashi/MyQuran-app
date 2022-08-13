@@ -35,6 +35,20 @@ data class SurahItem(
 	@field:SerializedName("nomor")
 	val nomor: String? = null
 ) {
+	fun toSurahEntity(): SurahEntity {
+		return SurahEntity(
+			keterangan.orEmpty(),
+			rukuk.orEmpty(),
+			nama.orEmpty(),
+			ayat ?: 0,
+			urut.orEmpty(),
+			arti.orEmpty(),
+			asma.orEmpty(),
+			audio.orEmpty(),
+			type.orEmpty(),
+			nomor.orEmpty()
+		)
+	}
 	fun toSurah(): Surah {
 		return Surah(
 			keterangan.orEmpty(),

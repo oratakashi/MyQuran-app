@@ -11,7 +11,10 @@ import org.koin.dsl.module
 
 val quranModule = module {
     single { QuranApi(get()) }
-    single<QuranRepository> { QuranDataSource(get()) }
+    single<QuranRepository> { QuranDataSource(
+        get(),
+        get(),
+    ) }
     single<QuranUseCase> { QuranInteractor(get()) }
 
     viewModel { MainViewModel(get()) }

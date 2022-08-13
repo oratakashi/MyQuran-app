@@ -1,6 +1,7 @@
 package com.oratakashi.myquran
 
 import android.app.Application
+import com.oratakashi.myquran.di.databaseModule
 import com.oratakashi.myquran.di.navigationModule
 import com.oratakashi.myquran.di.networkModule
 import com.oratakashi.myquran.di.quranModule
@@ -15,6 +16,7 @@ class App: Application() {
             modules(
                 networkModule,
                 navigationModule,
+                databaseModule,
                 quranModule
             )
         }
