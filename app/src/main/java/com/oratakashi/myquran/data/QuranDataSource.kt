@@ -1,6 +1,7 @@
 package com.oratakashi.myquran.data
 
 import com.oratakashi.myquran.data.db.SurahDao
+import com.oratakashi.myquran.data.model.ayat.AyatItem
 import com.oratakashi.myquran.data.model.surah.SurahEntity
 import com.oratakashi.myquran.data.model.surah.SurahItem
 import com.oratakashi.myquran.data.web.QuranApi
@@ -11,7 +12,7 @@ import io.reactivex.Single
 class QuranDataSource(
     private val webService: QuranApi,
     private val dbSurah: SurahDao
-): QuranRepository {
+) : QuranRepository {
     override fun getSurah(): Observable<List<SurahEntity>> {
         return networkSync(
             saveToDb = { dbSurah.insertAll(it) },
@@ -22,4 +23,7 @@ class QuranDataSource(
         )
     }
 
+    override fun getAyat(nomor: Int): Single<List<AyatItem>> {
+        return webService.getAyat(nomor)
+    }
 }

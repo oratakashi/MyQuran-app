@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingVertical="@dimen/dimen_12dp">
+    <ImageView
+        android:id="@+id/ivBgSurah"
+        android:layout_width="@dimen/dimen_60dp"
+        android:layout_height="@dimen/dimen_60dp"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:src="@drawable/ic_surah_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvSurahNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/bodySmallMedium"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBgSurah"
+        app:layout_constraintEnd_toEndOf="@+id/ivBgSurah"
+        app:layout_constraintStart_toStartOf="@+id/ivBgSurah"
+        app:layout_constraintTop_toTopOf="@+id/ivBgSurah"
+        tools:text="999" />
+
+    <TextView
+        android:id="@+id/tvAyat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/bodyUtsmaniRegular"
+        android:textStyle="bold"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivBgSurah"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ" />
+
+    <TextView
+        android:id="@+id/tvLatin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:textAppearance="?attr/bodySmallRegular"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivBgSurah"
+        app:layout_constraintTop_toBottomOf="@+id/tvAyat"
+        tools:text="bismi" />
+
+    <TextView
+        android:id="@+id/tvTranslation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/bodySmallRegular"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivBgSurah"
+        app:layout_constraintTop_toBottomOf="@+id/tvLatin"
+        tools:text="Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang." />
+</androidx.constraintlayout.widget.ConstraintLayout>

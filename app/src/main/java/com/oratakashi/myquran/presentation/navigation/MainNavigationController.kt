@@ -11,6 +11,10 @@ import com.oratakashi.myquran.utility.getDefaultNavOptions
 class MainNavigationController(
     private val navController: NavController?
 ) : MainNavigation {
+    override fun toPrevious() {
+        navController?.navigateUp()
+    }
+
     override fun toMain() {
         runCatching {
             navController?.navigate(

@@ -162,7 +162,7 @@
     <style name="BodyUtsmaniRegular" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily">@font/usmani</item>
         <item name="android:fontFamily">@font/usmani</item>
-        <item name="android:textSize">@dimen/dimen_14sp</item>
+        <item name="android:textSize">@dimen/dimen_16sp</item>
         <item name="lineHeight">@dimen/dimen_24dp</item>
         <item name="android:textStyle">normal</item>
     </style>
