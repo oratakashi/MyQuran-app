@@ -1,6 +1,7 @@
 package com.oratakashi.myquran.presentation.menu.detail
 
 import androidx.core.text.buildSpannedString
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,9 +17,11 @@ import com.oratakashi.viewbinding.core.tools.onClick
 import com.oratakashi.viewbinding.core.tools.showDefaultLayout
 import com.oratakashi.viewbinding.core.tools.showLoadingLayout
 import com.oratakashi.viewbinding.core.tools.toast
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DetailFragment : BaseFragment<FragmentDetailBinding>(),DetailDataContract {
+class DetailFragment : BaseFragment<FragmentDetailBinding>(), DetailDataContract {
 
     private val ayatAdapter: AyatAdapter by lazy {
         AyatAdapter()
@@ -69,10 +72,16 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(),DetailDataContract 
         binding.msvDetail.showLoadingLayout()
     }
 
-    override fun onSuccessAyat(data: List<Ayat>) {
+    override fun onSuccessAyat(data: StateFlow<List<Ayat>>) {
         with(binding) {
             msvDetail.showDefaultLayout()
-            ayatAdapter.addAll(data)
+            val dataList: MutableList<Ayat> = ArrayList()
+            lifecycleScope.launch {
+                data.collect {
+                    dataList.addAll(it)
+                    ayatAdapter.addAll(dataList)
+                }
+            }
         }
     }
 
