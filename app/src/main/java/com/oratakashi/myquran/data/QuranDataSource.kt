@@ -22,7 +22,7 @@ class QuranDataSource(
         return networkSync(
             saveToDb = { dbSurah.insertAll(it) },
             fetchDb = { dbSurah.getAll() },
-            fetchApi = { webService.getSurah() },
+            fetchApi = { webService.getSurah().map { it.data ?: emptyList() } },
             onConflict = { api, _ -> api.map { it.toSurahEntity() } },
             alwaysUpToDate = { it.isEmpty() }
         )
@@ -36,7 +36,8 @@ class QuranDataSource(
                     emitter.onNext(it)
                     if (it.isEmpty()) {
                         webService.getAyat(nomor)
-                            .map { result -> result.map { data -> data.toAyatEntity(nomor) } }
+                            .map { result -> result.data ?: emptyList() }
+                            .map { result -> result.map { data -> data.toAyatEntity() } }
                             .toFlowable()
                             .takeWhile { result -> result.isNotEmpty() }
                             .flatMap { result -> Flowable.fromIterable(result) }

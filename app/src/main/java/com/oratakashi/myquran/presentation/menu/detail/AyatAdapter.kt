@@ -19,7 +19,7 @@ class AyatAdapter : RecyclerView.Adapter<ViewHolder<ItemAyatBinding>>() {
     override fun onBindViewHolder(holder: ViewHolder<ItemAyatBinding>, position: Int) {
         with(holder.binding) {
             tvAyat.text = data[position].arabic
-            tvSurahNumber.text = data[position].nomor
+            tvSurahNumber.text = data[position].nomor.toString()
             tvLatin.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 Html.fromHtml(data[position].latin, Html.FROM_HTML_MODE_COMPACT)
             } else {

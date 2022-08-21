@@ -18,7 +18,7 @@ data class SurahEntity(
     val audio: String,
     val type: String,
     @PrimaryKey(autoGenerate = false)
-    val nomor: String
+    val id: String
 ) {
     fun toSurah(): Surah {
         return Surah(
@@ -31,7 +31,7 @@ data class SurahEntity(
             asma,
             audio,
             type,
-            nomor
+            id
         )
     }
 }

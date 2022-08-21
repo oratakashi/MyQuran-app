@@ -11,11 +11,11 @@ import java.util.*
 data class AyatEntity(
     val arabic: String,
     val translation: String,
-    val nomor: String,
+    val nomor: Int,
     val latin: String,
     val idSurah: Int,
     @PrimaryKey(autoGenerate = false)
-    val id: String = UUID.randomUUID().toString()
+    val id: String
 ) {
     fun toAyat(): Ayat {
         return Ayat(

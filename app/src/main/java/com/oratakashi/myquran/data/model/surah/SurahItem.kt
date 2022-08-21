@@ -32,8 +32,8 @@ data class SurahItem(
 	@field:SerializedName("type")
 	val type: String? = null,
 
-	@field:SerializedName("nomor")
-	val nomor: String? = null
+	@field:SerializedName("id")
+	val id: String? = null
 ) {
 	fun toSurahEntity(): SurahEntity {
 		return SurahEntity(
@@ -46,7 +46,7 @@ data class SurahItem(
 			asma.orEmpty(),
 			audio.orEmpty(),
 			type.orEmpty(),
-			nomor.orEmpty()
+			id.orEmpty()
 		)
 	}
 	fun toSurah(): Surah {
@@ -60,7 +60,7 @@ data class SurahItem(
 			asma.orEmpty(),
 			audio.orEmpty(),
 			type.orEmpty(),
-			nomor.orEmpty()
+			id.orEmpty()
 		)
 	}
 }

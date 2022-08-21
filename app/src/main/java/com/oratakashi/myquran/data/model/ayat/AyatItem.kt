@@ -5,34 +5,41 @@ import com.oratakashi.myquran.domain.model.ayat.Ayat
 
 data class AyatItem(
 
-	@field:SerializedName("ar")
+	@field:SerializedName("arabic")
 	val arabic: String? = null,
 
-	@field:SerializedName("id")
+	@field:SerializedName("translation")
 	val translation: String? = null,
 
 	@field:SerializedName("nomor")
-	val nomor: String? = null,
+	val nomor: Int? = null,
 
-	@field:SerializedName("tr")
-	val latin: String? = null
+	@field:SerializedName("latin")
+	val latin: String? = null,
+
+	@field:SerializedName("idSurah")
+	val idSurah: Int? = null,
+
+	@field:SerializedName("id")
+	val id: String? = null
 ) {
 	fun toAyat(): Ayat {
 		return Ayat(
 			arabic.orEmpty(),
 			translation.orEmpty(),
-			nomor.orEmpty(),
+			nomor ?: 0,
 			latin.orEmpty()
 		)
 	}
 
-	fun toAyatEntity(idSurah: Int): AyatEntity {
+	fun toAyatEntity(): AyatEntity {
 		return AyatEntity(
 			arabic.orEmpty(),
 			translation.orEmpty(),
-			nomor.orEmpty(),
+			nomor ?: 0,
 			latin.orEmpty(),
-			idSurah
+			idSurah ?: 0,
+			id.orEmpty()
 		)
 	}
 }

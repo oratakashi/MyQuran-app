@@ -25,14 +25,7 @@ class DetailViewModel(
         quranUsecase.getAyat(nomor)
             .compose(composeFlowable())
             .subscribe({
-                _ayat.postValue(State.success(it.apply {
-                    if(this.isNotEmpty()) {
-                        if(nomor != 1 && this.first().nomor == "1") {
-                            val replaceFirst = this.first().arabic.replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "")
-                            this.first().arabic = replaceFirst
-                        }
-                    }
-                }))
+                _ayat.postValue(State.success(it))
             },{
                 _ayat.postValue(State.fail(it, it.message))
             }).let { return@let disposable::add }
