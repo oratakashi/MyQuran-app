@@ -20,6 +20,7 @@ class MainViewModel(
     val surah: LiveData<State<List<Surah>>> by lazy { _surah.immutable() }
 
     fun getSurah() {
+        _surah.postValue(State.loading())
         useCase.getSurah()
             .compose(composeObservable())
             .subscribe({

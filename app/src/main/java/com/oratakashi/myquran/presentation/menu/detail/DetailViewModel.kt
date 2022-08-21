@@ -8,6 +8,7 @@ import com.oratakashi.myquran.domain.model.ayat.Ayat
 import com.oratakashi.myquran.utility.immutable
 import com.oratakashi.viewbinding.core.binding.livedata.liveData
 import com.oratakashi.viewbinding.core.tools.State
+import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeFlowable
 import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeSingle
 import io.reactivex.disposables.CompositeDisposable
 
@@ -20,13 +21,16 @@ class DetailViewModel(
     val ayat: LiveData<State<List<Ayat>>> by lazy { _ayat.immutable() }
 
     fun getAyat(nomor: Int) {
+        _ayat.postValue(State.loading())
         quranUsecase.getAyat(nomor)
-            .compose(composeSingle())
+            .compose(composeFlowable())
             .subscribe({
                 _ayat.postValue(State.success(it.apply {
-                    if(nomor != 1 && this.first().nomor == "1") {
-                        val replaceFirst = this.first().arabic.replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "")
-                        this.first().arabic = replaceFirst
+                    if(this.isNotEmpty()) {
+                        if(nomor != 1 && this.first().nomor == "1") {
+                            val replaceFirst = this.first().arabic.replace("بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ", "")
+                            this.first().arabic = replaceFirst
+                        }
                     }
                 }))
             },{

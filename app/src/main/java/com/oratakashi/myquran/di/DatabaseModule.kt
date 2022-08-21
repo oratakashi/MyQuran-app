@@ -10,4 +10,5 @@ val databaseModule = module {
     }
 
     single { get<QuranDatabase>().surah() }
+    single { get<QuranDatabase>().ayat() }
 }

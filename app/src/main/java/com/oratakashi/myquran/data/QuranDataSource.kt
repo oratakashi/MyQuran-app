@@ -1,17 +1,22 @@
 package com.oratakashi.myquran.data
 
+import android.annotation.SuppressLint
+import com.oratakashi.myquran.data.db.AyatDao
 import com.oratakashi.myquran.data.db.SurahDao
-import com.oratakashi.myquran.data.model.ayat.AyatItem
+import com.oratakashi.myquran.data.model.ayat.AyatEntity
 import com.oratakashi.myquran.data.model.surah.SurahEntity
-import com.oratakashi.myquran.data.model.surah.SurahItem
 import com.oratakashi.myquran.data.web.QuranApi
 import com.oratakashi.viewbinding.core.network.networkSync
+import io.reactivex.BackpressureStrategy
+import io.reactivex.Flowable
 import io.reactivex.Observable
-import io.reactivex.Single
+import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 
 class QuranDataSource(
     private val webService: QuranApi,
-    private val dbSurah: SurahDao
+    private val dbSurah: SurahDao,
+    private val dbAyat: AyatDao
 ) : QuranRepository {
     override fun getSurah(): Observable<List<SurahEntity>> {
         return networkSync(
@@ -23,7 +28,37 @@ class QuranDataSource(
         )
     }
 
-    override fun getAyat(nomor: Int): Single<List<AyatItem>> {
-        return webService.getAyat(nomor)
+    @SuppressLint("CheckResult")
+    override fun getAyat(nomor: Int): Flowable<List<AyatEntity>> {
+        return Flowable.create({ emitter ->
+            dbAyat.getAll(nomor)
+                .subscribe({
+                    emitter.onNext(it)
+                    if (it.isEmpty()) {
+                        webService.getAyat(nomor)
+                            .map { result -> result.map { data -> data.toAyatEntity(nomor) } }
+                            .toFlowable()
+                            .takeWhile { result -> result.isNotEmpty() }
+                            .flatMap { result -> Flowable.fromIterable(result) }
+                            .concatMap { result ->
+                                dbAyat.insert(result).toFlowable()
+                                    .subscribeOn(Schedulers.io())
+                            }
+                            .debounce(50, TimeUnit.MILLISECONDS)
+                            .flatMap { dbAyat.getAll(nomor).toFlowable() }
+                            .doOnComplete { emitter.onComplete() }
+                            .subscribe({ result ->
+                                emitter.onNext(result)
+                            },{ error ->
+                                emitter.onError(error)
+                            })
+                    } else {
+                        emitter.onComplete()
+                    }
+                }, {
+                    emitter.onError(it)
+                    emitter.onComplete()
+                })
+        }, BackpressureStrategy.BUFFER)
     }
 }

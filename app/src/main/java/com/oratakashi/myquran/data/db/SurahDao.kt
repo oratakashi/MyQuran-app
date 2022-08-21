@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.oratakashi.myquran.data.model.ayat.AyatEntity
 import com.oratakashi.myquran.data.model.surah.SurahEntity
 import io.reactivex.Single
 

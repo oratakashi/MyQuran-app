@@ -4,11 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.oratakashi.myquran.data.model.ayat.AyatEntity
 import com.oratakashi.myquran.data.model.surah.SurahEntity
 
 @Database(
     entities = [
-        SurahEntity::class
+        SurahEntity::class,
+        AyatEntity::class
     ],
     version = 1,
     exportSchema = false
@@ -16,6 +18,7 @@ import com.oratakashi.myquran.data.model.surah.SurahEntity
 abstract class QuranDatabase: RoomDatabase() {
 
     abstract fun surah(): SurahDao
+    abstract fun ayat(): AyatDao
 
     companion object {
 

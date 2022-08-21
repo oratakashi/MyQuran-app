@@ -25,4 +25,14 @@ data class AyatItem(
 			latin.orEmpty()
 		)
 	}
+
+	fun toAyatEntity(idSurah: Int): AyatEntity {
+		return AyatEntity(
+			arabic.orEmpty(),
+			translation.orEmpty(),
+			nomor.orEmpty(),
+			latin.orEmpty(),
+			idSurah
+		)
+	}
 }
