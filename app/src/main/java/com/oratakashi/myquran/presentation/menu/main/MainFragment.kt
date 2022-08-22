@@ -1,8 +1,10 @@
 package com.oratakashi.myquran.presentation.menu.main
 
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oratakashi.myquran.databinding.FragmentMainBinding
+import com.oratakashi.myquran.domain.model.ayat.Ayat
 import com.oratakashi.myquran.domain.model.surah.Surah
 import com.oratakashi.myquran.presentation.abstaction.BaseFragment
 import com.oratakashi.myquran.presentation.navigation.MainNavigation
@@ -12,6 +14,9 @@ import com.oratakashi.viewbinding.core.binding.fragment.viewBinding
 import com.oratakashi.viewbinding.core.tools.showDefaultLayout
 import com.oratakashi.viewbinding.core.tools.showLoadingLayout
 import com.oratakashi.viewbinding.core.tools.toast
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : BaseFragment<FragmentMainBinding>(), MainDataContract {
@@ -51,10 +56,16 @@ class MainFragment : BaseFragment<FragmentMainBinding>(), MainDataContract {
         binding.msvSurah.showLoadingLayout()
     }
 
-    override fun onSuccessSurah(data: List<Surah>) {
+    override fun onSuccessSurah(data: StateFlow<List<Surah>>) {
         with(binding) {
             msvSurah.showDefaultLayout()
-            surahAdapter.addAll(data)
+            val dataList: MutableList<Surah> = ArrayList()
+            lifecycleScope.launch {
+                data.collect {
+                    dataList.addAll(it)
+                    surahAdapter.addAll(dataList)
+                }
+            }
         }
     }
 

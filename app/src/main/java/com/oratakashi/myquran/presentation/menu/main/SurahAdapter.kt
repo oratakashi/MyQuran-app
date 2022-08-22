@@ -2,9 +2,11 @@ package com.oratakashi.myquran.presentation.menu.main
 
 import android.view.ViewGroup
 import androidx.core.text.buildSpannedString
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.oratakashi.myquran.R
 import com.oratakashi.myquran.databinding.ItemSurahBinding
+import com.oratakashi.myquran.domain.model.ayat.Ayat
 import com.oratakashi.myquran.domain.model.surah.Surah
 import com.oratakashi.viewbinding.core.binding.list.arrayList
 import com.oratakashi.viewbinding.core.binding.recyclerview.ViewHolder
@@ -44,10 +46,30 @@ class SurahAdapter(
     }
 
     fun addAll(data: List<Surah>) {
+        val diffResult = DiffUtil.calculateDiff(DiffUtilCallback(data))
         this.data.clear()
         this.data.addAll(data)
-        notifyItemRangeChanged(0, data.size)
+        diffResult.dispatchUpdatesTo(this)
     }
 
     private val data: MutableList<Surah> by arrayList()
+
+    inner class DiffUtilCallback(private val newList: List<Surah>) : DiffUtil.Callback() {
+        override fun getOldListSize(): Int {
+            return data.size
+        }
+
+        override fun getNewListSize(): Int {
+            return newList.size
+        }
+
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return data[oldItemPosition] == newList[newItemPosition]
+        }
+
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return data[oldItemPosition].nomor == newList[newItemPosition].nomor
+        }
+
+    }
 }
