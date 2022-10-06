@@ -9,6 +9,7 @@ import com.oratakashi.myquran.R
 import com.oratakashi.myquran.databinding.FragmentDetailBinding
 import com.oratakashi.myquran.domain.model.ayat.Ayat
 import com.oratakashi.myquran.presentation.abstaction.BaseFragment
+import com.oratakashi.myquran.presentation.menu.detail.dialog.InfoDialogFragment
 import com.oratakashi.myquran.presentation.navigation.MainNavigation
 import com.oratakashi.myquran.utility.addObservers
 import com.oratakashi.myquran.utility.navigation
@@ -58,6 +59,9 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(), DetailDataContract
         with(binding) {
             ivBack.onClick {
                 nav.toPrevious()
+            }
+            ivInfo.onClick {
+                InfoDialogFragment(args.data).showNow(childFragmentManager, "dialog")
             }
             viewModel.getAyat(args.data.nomor.toInt())
         }
