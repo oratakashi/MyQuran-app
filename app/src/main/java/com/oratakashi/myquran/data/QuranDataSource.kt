@@ -1,8 +1,8 @@
 package com.oratakashi.myquran.data
 
 import android.annotation.SuppressLint
-import com.oratakashi.myquran.data.db.AyatDao
-import com.oratakashi.myquran.data.db.SurahDao
+import com.oratakashi.myquran.data.db.dao.AyatDao
+import com.oratakashi.myquran.data.db.dao.SurahDao
 import com.oratakashi.myquran.data.model.ayat.AyatEntity
 import com.oratakashi.myquran.data.model.surah.SurahEntity
 import com.oratakashi.myquran.data.web.QuranApi

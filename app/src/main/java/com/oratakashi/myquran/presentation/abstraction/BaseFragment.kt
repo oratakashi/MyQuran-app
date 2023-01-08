@@ -1,4 +1,4 @@
-package com.oratakashi.myquran.presentation.abstaction
+package com.oratakashi.myquran.presentation.abstraction
 
 import android.os.Bundle
 import android.view.LayoutInflater

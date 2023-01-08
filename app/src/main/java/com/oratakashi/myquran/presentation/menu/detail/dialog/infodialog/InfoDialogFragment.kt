@@ -1,4 +1,4 @@
-package com.oratakashi.myquran.presentation.menu.detail.dialog
+package com.oratakashi.myquran.presentation.menu.detail.dialog.infodialog
 
 import android.os.Build
 import android.os.Bundle

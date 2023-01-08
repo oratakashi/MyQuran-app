@@ -11,7 +11,9 @@ import com.oratakashi.viewbinding.core.binding.list.arrayList
 import com.oratakashi.viewbinding.core.binding.recyclerview.ViewHolder
 import com.oratakashi.viewbinding.core.binding.recyclerview.viewBinding
 
-class AyatAdapter : RecyclerView.Adapter<ViewHolder<ItemAyatBinding>>() {
+class AyatAdapter(
+    private val onClick: (Ayat) -> Unit
+) : RecyclerView.Adapter<ViewHolder<ItemAyatBinding>>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<ItemAyatBinding> {
         return viewBinding(parent)
     }
@@ -30,6 +32,9 @@ class AyatAdapter : RecyclerView.Adapter<ViewHolder<ItemAyatBinding>>() {
                 Html.fromHtml(data[position].latin)
             }
             tvTranslation.text = data[position].translation
+            root.setOnClickListener {
+                onClick.invoke(data[position])
+            }
         }
     }
 

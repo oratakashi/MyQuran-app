@@ -4,9 +4,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oratakashi.myquran.databinding.FragmentMainBinding
-import com.oratakashi.myquran.domain.model.ayat.Ayat
 import com.oratakashi.myquran.domain.model.surah.Surah
-import com.oratakashi.myquran.presentation.abstaction.BaseFragment
+import com.oratakashi.myquran.presentation.abstraction.BaseFragment
 import com.oratakashi.myquran.presentation.navigation.MainNavigation
 import com.oratakashi.myquran.utility.addObservers
 import com.oratakashi.myquran.utility.navigation
@@ -15,7 +14,6 @@ import com.oratakashi.viewbinding.core.tools.showDefaultLayout
 import com.oratakashi.viewbinding.core.tools.showLoadingLayout
 import com.oratakashi.viewbinding.core.tools.toast
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

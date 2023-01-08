@@ -1,4 +1,4 @@
-package com.oratakashi.myquran.data.db
+package com.oratakashi.myquran.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Insert

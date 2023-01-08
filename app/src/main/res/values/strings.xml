@@ -8,6 +8,7 @@
     <string name="label_continue">Lanjutkan</string>
     <string name="label_surah_list">Daftar Surah</string>
     <string name="placeholder_surah_desc">%1$s - %2$s Ayat</string>
+    <string name="placeholder_surah_name">QS: %1$s</string>
     <string name="foo">Lorem Ipsum</string>
     <string name="label_information">Informasi</string>
 </resources>

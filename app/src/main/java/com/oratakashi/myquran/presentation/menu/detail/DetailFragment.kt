@@ -8,8 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.oratakashi.myquran.R
 import com.oratakashi.myquran.databinding.FragmentDetailBinding
 import com.oratakashi.myquran.domain.model.ayat.Ayat
-import com.oratakashi.myquran.presentation.abstaction.BaseFragment
-import com.oratakashi.myquran.presentation.menu.detail.dialog.InfoDialogFragment
+import com.oratakashi.myquran.presentation.abstraction.BaseFragment
+import com.oratakashi.myquran.presentation.menu.detail.dialog.contextdialog.ContextDialogFragment
+import com.oratakashi.myquran.presentation.menu.detail.dialog.infodialog.InfoDialogFragment
 import com.oratakashi.myquran.presentation.navigation.MainNavigation
 import com.oratakashi.myquran.utility.addObservers
 import com.oratakashi.myquran.utility.navigation
@@ -25,7 +26,12 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class DetailFragment : BaseFragment<FragmentDetailBinding>(), DetailDataContract {
 
     private val ayatAdapter: AyatAdapter by lazy {
-        AyatAdapter()
+        AyatAdapter {
+            ContextDialogFragment(
+                args.data,
+                it
+            ).showNow(childFragmentManager, "dialog")
+        }
     }
 
     override fun initUI() {

@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.oratakashi.myquran.data.db.dao.AyatDao
+import com.oratakashi.myquran.data.db.dao.SurahDao
 import com.oratakashi.myquran.data.model.ayat.AyatEntity
 import com.oratakashi.myquran.data.model.surah.SurahEntity
 
