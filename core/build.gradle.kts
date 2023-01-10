@@ -58,11 +58,11 @@ subprojects {
     }
 
     dependencies {
-//        if(
-//            !name.contains("dependencies")
-//        ) {
-//            add("implementation", project(":core:dependencies"))
-//        }
+        if(
+            !name.contains("dependencies")
+        ) {
+            add("implementation", project(":core:dependencies"))
+        }
 
 //        if(name.contains("utils") || name == "ui") {
 //            val libs = rootProject.project.libs

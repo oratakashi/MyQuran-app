@@ -17,3 +17,4 @@ rootProject.name = "MyQur'an"
 include ':app'
 include ':core'
 include ':core:dependencies'
+include ':core:ui'

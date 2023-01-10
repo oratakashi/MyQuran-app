@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="OraUI">
+        <attr name="android:text" format="string" />
+        <attr name="startIconDrawable" format="reference" />
+    </declare-styleable>
+</resources>

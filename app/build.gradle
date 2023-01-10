@@ -51,25 +51,11 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
-
-    //Koin
-    implementation "io.insert-koin:koin-core:3.2.0"
-    implementation "io.insert-koin:koin-android:3.2.0"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation project(":core").subprojects
 
     //HTTP Inspector
     debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
     releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
-
-    //AndroidViewBinding Helper
-    implementation 'com.oratakashi:AndroidViewBinding:3.21.1'
 
     //Room
     implementation "androidx.room:room-runtime:2.4.3"
