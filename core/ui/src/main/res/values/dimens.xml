@@ -118,5 +118,6 @@
     <dimen name="dimen_130dp">130dp</dimen>
     <dimen name="list_item_spacing">16dp</dimen>
     <dimen name="list_item_spacing_half">8dp</dimen>
+    <dimen name="dimen_35dp">35dp</dimen>
     <!--endregion SP (Text)-->
 </resources>

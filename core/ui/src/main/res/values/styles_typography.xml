@@ -79,7 +79,7 @@
         <item name="fontFamily">@font/regular</item>
         <item name="android:fontFamily">@font/regular</item>
         <item name="android:textSize">@dimen/dimen_14sp</item>
-        <item name="lineHeight">@dimen/dimen_18dp</item>
+        <item name="lineHeight">@dimen/dimen_24dp</item>
         <item name="android:textStyle">normal</item>
     </style>
     <style name="BodySmallMedium" parent="TextAppearance.MaterialComponents.Body2">
@@ -163,7 +163,7 @@
         <item name="fontFamily">@font/usmani</item>
         <item name="android:fontFamily">@font/usmani</item>
         <item name="android:textSize">@dimen/dimen_20sp</item>
-        <item name="lineHeight">@dimen/dimen_24dp</item>
+        <item name="lineHeight">@dimen/dimen_35dp</item>
         <item name="android:textStyle">normal</item>
     </style>
 </resources>

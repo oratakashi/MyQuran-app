@@ -97,7 +97,7 @@
                     android:id="@+id/tvLatin"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
                     android:layout_marginHorizontal="@dimen/dimen_16dp"
                     android:textAppearance="?attr/bodySmallRegular"
                     android:textColor="?attr/colorPrimary"
@@ -111,6 +111,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/dimen_16dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
                     android:textAppearance="?attr/bodySmallRegular"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -123,6 +124,30 @@
                 android:layout_height="@dimen/dimen_1dp"
                 android:layout_marginTop="@dimen/dimen_16dp"
                 android:background="@color/black5"/>
+
+            <com.oratakashi.myquran.ui.widget.menu.OraMenuView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_copy"
+                app:startIconDrawable="@drawable/ic_copy"/>
+
+            <com.oratakashi.myquran.ui.widget.menu.OraMenuView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_share"
+                app:startIconDrawable="@drawable/ic_share"/>
+
+            <com.oratakashi.myquran.ui.widget.menu.OraMenuView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_mark_last_read"
+                app:startIconDrawable="@drawable/ic_mark"/>
+
+            <com.oratakashi.myquran.ui.widget.menu.OraMenuView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_save_to_bookmark"
+                app:startIconDrawable="@drawable/ic_bookmark"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

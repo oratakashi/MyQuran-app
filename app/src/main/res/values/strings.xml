@@ -11,4 +11,8 @@
     <string name="placeholder_surah_name">QS: %1$s</string>
     <string name="foo">Lorem Ipsum</string>
     <string name="label_information">Informasi</string>
+    <string name="label_copy">Copy</string>
+    <string name="label_share">Bagikan</string>
+    <string name="label_mark_last_read">Tandai terakhir dibaca</string>
+    <string name="label_save_to_bookmark">Simpan ke bookmark</string>
 </resources>
