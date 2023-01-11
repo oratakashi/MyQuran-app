@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.oratakashi.myquran.domain.QuranUseCase
 import com.oratakashi.myquran.domain.model.surah.Surah
-import com.oratakashi.myquran.utility.immutable
+import com.oratakashi.myquran.utils.immutable
 import com.oratakashi.viewbinding.core.binding.livedata.liveData
 import com.oratakashi.viewbinding.core.tools.State
 import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeObservable

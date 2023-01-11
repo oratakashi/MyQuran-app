@@ -1,4 +1,4 @@
-package com.oratakashi.myquran.utility
+package com.oratakashi.myquran.utils
 
 object Credentials {
     init {

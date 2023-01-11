@@ -1,4 +1,4 @@
-package com.oratakashi.myquran.utility
+package com.oratakashi.myquran.utils
 
 import android.app.Activity
 import android.content.ComponentCallbacks
@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
-import com.oratakashi.myquran.R
 import org.koin.android.ext.android.inject
 import org.koin.core.parameter.parametersOf
 

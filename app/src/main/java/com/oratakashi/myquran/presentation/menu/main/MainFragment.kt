@@ -7,8 +7,8 @@ import com.oratakashi.myquran.databinding.FragmentMainBinding
 import com.oratakashi.myquran.domain.model.surah.Surah
 import com.oratakashi.myquran.presentation.abstraction.BaseFragment
 import com.oratakashi.myquran.presentation.navigation.MainNavigation
-import com.oratakashi.myquran.utility.addObservers
-import com.oratakashi.myquran.utility.navigation
+import com.oratakashi.myquran.utils.addObservers
+import com.oratakashi.myquran.utils.navigation
 import com.oratakashi.viewbinding.core.binding.fragment.viewBinding
 import com.oratakashi.viewbinding.core.tools.showDefaultLayout
 import com.oratakashi.viewbinding.core.tools.showLoadingLayout

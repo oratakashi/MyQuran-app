@@ -5,11 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.oratakashi.myquran.domain.QuranUseCase
 import com.oratakashi.myquran.domain.model.ayat.Ayat
-import com.oratakashi.myquran.utility.immutable
+import com.oratakashi.myquran.utils.immutable
 import com.oratakashi.viewbinding.core.binding.livedata.liveData
 import com.oratakashi.viewbinding.core.tools.State
 import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeFlowable
-import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeSingle
 import io.reactivex.disposables.CompositeDisposable
 
 class DetailViewModel(

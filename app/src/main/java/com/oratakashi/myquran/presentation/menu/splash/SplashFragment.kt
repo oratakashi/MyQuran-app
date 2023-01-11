@@ -4,7 +4,7 @@ import androidx.lifecycle.lifecycleScope
 import com.oratakashi.myquran.databinding.FragmentSplashBinding
 import com.oratakashi.myquran.presentation.abstraction.BaseFragment
 import com.oratakashi.myquran.presentation.navigation.MainNavigation
-import com.oratakashi.myquran.utility.navigation
+import com.oratakashi.myquran.utils.navigation
 import com.oratakashi.viewbinding.core.binding.fragment.viewBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

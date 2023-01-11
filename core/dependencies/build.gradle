@@ -18,4 +18,7 @@ dependencies {
     //AndroidViewBinding Helper
     api 'com.oratakashi:AndroidViewBinding:3.21.1'
 
+    //AndroidX Startup
+    api "androidx.startup:startup-runtime:1.1.1"
+
 }

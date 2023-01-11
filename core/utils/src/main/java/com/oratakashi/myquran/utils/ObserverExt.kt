@@ -1,4 +1,4 @@
-package com.oratakashi.myquran.utility
+package com.oratakashi.myquran.utils
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

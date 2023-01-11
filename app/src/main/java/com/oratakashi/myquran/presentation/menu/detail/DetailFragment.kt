@@ -12,8 +12,8 @@ import com.oratakashi.myquran.presentation.abstraction.BaseFragment
 import com.oratakashi.myquran.presentation.menu.detail.dialog.contextdialog.ContextDialogFragment
 import com.oratakashi.myquran.presentation.menu.detail.dialog.infodialog.InfoDialogFragment
 import com.oratakashi.myquran.presentation.navigation.MainNavigation
-import com.oratakashi.myquran.utility.addObservers
-import com.oratakashi.myquran.utility.navigation
+import com.oratakashi.myquran.utils.addObservers
+import com.oratakashi.myquran.utils.navigation
 import com.oratakashi.viewbinding.core.binding.fragment.viewBinding
 import com.oratakashi.viewbinding.core.tools.onClick
 import com.oratakashi.viewbinding.core.tools.showDefaultLayout

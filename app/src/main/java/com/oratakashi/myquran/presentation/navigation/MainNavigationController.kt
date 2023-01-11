@@ -6,7 +6,7 @@ import com.oratakashi.myquran.R
 import com.oratakashi.myquran.domain.model.surah.Surah
 import com.oratakashi.myquran.presentation.menu.main.MainFragmentDirections
 import com.oratakashi.myquran.presentation.menu.splash.SplashFragmentDirections
-import com.oratakashi.myquran.utility.getDefaultNavOptions
+import com.oratakashi.myquran.utils.getDefaultNavOptions
 
 class MainNavigationController(
     private val navController: NavController?
