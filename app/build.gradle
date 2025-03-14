@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
-    id 'kotlin-kapt'
+    id 'com.google.devtools.ksp'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
@@ -57,7 +57,10 @@ dependencies {
     //Room
     implementation "androidx.room:room-runtime:2.4.3"
     implementation "androidx.room:room-rxjava2:2.4.3"
-    kapt 'androidx.room:room-compiler:2.4.3'
+    ksp 'androidx.room:room-compiler:2.4.3'
+
+    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
