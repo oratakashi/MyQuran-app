@@ -97,13 +97,13 @@
                     android:id="@+id/tvLatin"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_10dp"
                     android:layout_marginHorizontal="@dimen/dimen_16dp"
+                    android:layout_marginTop="@dimen/dimen_16dp"
                     android:textAppearance="?attr/bodySmallRegular"
                     android:textColor="?attr/colorPrimary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/ivBgSurah"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAyat"
                     tools:text="bismi" />
 
                 <TextView
