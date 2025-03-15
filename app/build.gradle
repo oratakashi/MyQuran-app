@@ -52,7 +52,7 @@ android {
 dependencies {
 
     implementation project(":core").subprojects
-    implementation project(":modules").subprojects
+//    implementation project(":modules").subprojects
 
     //Room
     implementation "androidx.room:room-runtime:2.4.3"

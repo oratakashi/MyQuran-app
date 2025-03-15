@@ -15,8 +15,6 @@
             <option value="$PROJECT_DIR$/core/dependencies" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/core/utils" />
-            <option value="$PROJECT_DIR$/modules" />
-            <option value="$PROJECT_DIR$/modules/chapter" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
