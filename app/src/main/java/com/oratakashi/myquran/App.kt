@@ -8,6 +8,7 @@ import com.oratakashi.myquran.di.quranModule
 import com.oratakashi.myquran.utils.AppConfig
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
+import org.koin.core.module.Module
 
 class App: Application() {
     override fun onCreate() {
@@ -21,12 +22,16 @@ class App: Application() {
 
         startKoin {
             androidContext(this@App)
-            modules(
-                networkModule,
-                navigationModule,
-                databaseModule,
-                quranModule
-            )
+            modules(defineKoinModules())
         }
+    }
+
+    private fun defineKoinModules(): List<Module> {
+        return listOf(
+            networkModule,
+            navigationModule,
+            databaseModule,
+            quranModule
+        )
     }
 }
