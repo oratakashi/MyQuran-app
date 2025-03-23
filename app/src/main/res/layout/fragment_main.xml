@@ -129,15 +129,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
-            <com.kennyc.view.MultiStateView
+            <com.oratakashi.viewbinding.core.ui.viewstate.OraViewState
                 android:id="@+id/msvSurah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_16dp"
-                app:msv_loadingView="@layout/layout_loading"
-                app:msv_viewState="content"
-                tools:msv_viewState="loading"
-                app:msv_animateViewChanges="true"
+                app:loadingView="@layout/layout_loading"
+                app:viewState="content"
+                tools:viewState="loading"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4">
@@ -150,7 +149,7 @@
                     tools:itemCount="1"
                     tools:listitem="@layout/item_surah"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-            </com.kennyc.view.MultiStateView>
+            </com.oratakashi.viewbinding.core.ui.viewstate.OraViewState>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

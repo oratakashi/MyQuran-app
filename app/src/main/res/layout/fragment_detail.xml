@@ -105,15 +105,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <com.kennyc.view.MultiStateView
+        <com.oratakashi.viewbinding.core.ui.viewstate.OraViewState
             android:id="@+id/msvDetail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:msv_viewState="content"
-            tools:msv_viewState="loading"
-            app:msv_animateViewChanges="true"
+            app:viewState="content"
+            tools:viewState="loading"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:msv_loadingView="@layout/layout_loading"
+            app:loadingView="@layout/layout_loading"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -123,6 +122,6 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_ayat"
                 tools:itemCount="2"/>
-        </com.kennyc.view.MultiStateView>
+        </com.oratakashi.viewbinding.core.ui.viewstate.OraViewState>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>

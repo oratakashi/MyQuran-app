@@ -16,9 +16,9 @@ import com.oratakashi.myquran.utils.addObservers
 import com.oratakashi.myquran.utils.navigation
 import com.oratakashi.viewbinding.core.binding.fragment.viewBinding
 import com.oratakashi.viewbinding.core.tools.onClick
-import com.oratakashi.viewbinding.core.tools.showDefaultLayout
-import com.oratakashi.viewbinding.core.tools.showLoadingLayout
 import com.oratakashi.viewbinding.core.tools.toast
+import com.oratakashi.viewbinding.core.ui.viewstate.showDefaultLayout
+import com.oratakashi.viewbinding.core.ui.viewstate.showLoadingLayout
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel

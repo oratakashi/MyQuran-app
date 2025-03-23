@@ -7,7 +7,7 @@ import com.oratakashi.myquran.BuildConfig
 import com.oratakashi.myquran.data.web.QuranApiClient
 import com.oratakashi.myquran.utils.Credentials
 import com.oratakashi.viewbinding.core.tools.retrofit.createOkHttpClient
-import com.oratakashi.viewbinding.core.tools.retrofit.createReactiveService
+import com.oratakashi.viewbinding.core.tools.retrofit.rxjava3.createReactiveService
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
