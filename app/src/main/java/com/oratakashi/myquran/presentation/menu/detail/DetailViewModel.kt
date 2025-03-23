@@ -10,6 +10,8 @@ import com.oratakashi.viewbinding.core.binding.livedata.liveData
 import com.oratakashi.viewbinding.core.tools.State
 import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeFlowable
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class DetailViewModel(
     private val quranUsecase: QuranUseCase
@@ -22,7 +24,8 @@ class DetailViewModel(
     fun getAyat(nomor: Int) {
         _ayat.postValue(State.loading())
         quranUsecase.getAyat(nomor)
-            .compose(composeFlowable())
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 _ayat.postValue(State.success(it))
             },{

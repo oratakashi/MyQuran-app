@@ -3,9 +3,8 @@ package com.oratakashi.myquran.domain
 import com.oratakashi.myquran.data.QuranRepository
 import com.oratakashi.myquran.domain.model.ayat.Ayat
 import com.oratakashi.myquran.domain.model.surah.Surah
-import io.reactivex.Flowable
-import io.reactivex.Observable
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Flowable
+import io.reactivex.rxjava3.core.Observable
 
 class QuranInteractor(
     private val repo: QuranRepository

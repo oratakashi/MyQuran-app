@@ -6,11 +6,11 @@ import com.oratakashi.myquran.data.db.dao.SurahDao
 import com.oratakashi.myquran.data.model.ayat.AyatEntity
 import com.oratakashi.myquran.data.model.surah.SurahEntity
 import com.oratakashi.myquran.data.web.QuranApi
-import com.oratakashi.viewbinding.core.network.networkSync
-import io.reactivex.BackpressureStrategy
-import io.reactivex.Flowable
-import io.reactivex.Observable
-import io.reactivex.schedulers.Schedulers
+import com.oratakashi.viewbinding.core.network.rxjava3.observable.networkSync
+import io.reactivex.rxjava3.core.BackpressureStrategy
+import io.reactivex.rxjava3.core.Flowable
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
 class QuranDataSource(

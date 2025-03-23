@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.oratakashi.myquran.data.model.ayat.AyatEntity
 import com.oratakashi.myquran.data.model.surah.SurahEntity
-import io.reactivex.Single
+import io.reactivex.rxjava3.core.Single
 
 @Dao
 interface SurahDao {

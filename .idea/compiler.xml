@@ -2,10 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="11">
-      <module name="MyQur'an.app" target="21" />
-      <module name="MyQur'an.core.dependencies" target="21" />
-      <module name="MyQur'an.core.ui" target="21" />
-      <module name="MyQur'an.core.utils" target="21" />
+      <module name="MyQur'an.app" target="17" />
+      <module name="MyQur'an.core.dependencies" target="17" />
+      <module name="MyQur'an.core.ui" target="17" />
+      <module name="MyQur'an.core.utils" target="17" />
       <module name="MyQur'an.modules.chapter" target="21" />
     </bytecodeTargetLevel>
   </component>

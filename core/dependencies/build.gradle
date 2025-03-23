@@ -16,7 +16,7 @@ dependencies {
     api 'androidx.recyclerview:recyclerview:1.2.1'
 
     //AndroidViewBinding Helper
-    api 'com.oratakashi:AndroidViewBinding:3.21.1'
+    api 'com.oratakashi:AndroidViewBinding:3.24.4'
 
     //AndroidX Startup
     api "androidx.startup:startup-runtime:1.1.1"

@@ -10,6 +10,8 @@ import com.oratakashi.viewbinding.core.binding.livedata.liveData
 import com.oratakashi.viewbinding.core.tools.State
 import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeObservable
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MainViewModel(
     private val useCase: QuranUseCase
@@ -22,7 +24,8 @@ class MainViewModel(
     fun getSurah() {
         _surah.postValue(State.loading())
         useCase.getSurah()
-            .compose(composeObservable())
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 _surah.postValue(State.success(it))
             }, {
