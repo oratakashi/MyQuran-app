@@ -16,6 +16,7 @@ val quranModule = module {
         get(),
         get(),
         get(),
+        get()
     ) }
     single<QuranUseCase> { QuranInteractor(get()) }
 

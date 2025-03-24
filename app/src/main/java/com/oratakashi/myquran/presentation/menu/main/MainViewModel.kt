@@ -8,10 +8,8 @@ import com.oratakashi.myquran.domain.model.surah.Surah
 import com.oratakashi.myquran.utils.immutable
 import com.oratakashi.viewbinding.core.binding.livedata.liveData
 import com.oratakashi.viewbinding.core.tools.State
-import com.oratakashi.viewbinding.core.tools.retrofit.transformer.composeObservable
+import com.oratakashi.viewbinding.core.tools.retrofit.rxjava3.transformer.composeObservable
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MainViewModel(
     private val useCase: QuranUseCase
@@ -24,8 +22,7 @@ class MainViewModel(
     fun getSurah() {
         _surah.postValue(State.loading())
         useCase.getSurah()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
+            .compose(composeObservable())
             .subscribe({
                 _surah.postValue(State.success(it))
             }, {

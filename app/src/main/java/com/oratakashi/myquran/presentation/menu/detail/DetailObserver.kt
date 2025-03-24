@@ -22,14 +22,15 @@ class DetailObserver(
                 is State.Default -> Unit
                 is State.Empty   -> Unit
                 is State.Success -> {
-                    val state: MutableStateFlow<List<Ayat>> = MutableStateFlow(emptyList())
-                    owner.lifecycleScope.launch(Dispatchers.IO) {
-                        it.data.chunked(10).forEach { part ->
-                            state.emit(part)
-                            delay(500)
-                        }
-                    }
-                    view.onSuccessAyat(state)
+//                    val state: MutableStateFlow<List<Ayat>> = MutableStateFlow(emptyList())
+//                    owner.lifecycleScope.launch(Dispatchers.IO) {
+//                        it.data.chunked(10).forEach { part ->
+//                            state.emit(part)
+//                            delay(500)
+//                        }
+//                    }
+//                    view.onSuccessAyat(state)
+                    view.onSuccessAyat(it.data)
                 }
                 is State.Failure -> view.onFailAyat(it.throwable)
             }

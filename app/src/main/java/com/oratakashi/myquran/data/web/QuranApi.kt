@@ -15,4 +15,8 @@ class QuranApi(
     override fun getAyat(nomor: Int): Single<BaseResponse<List<AyatItem>>> {
         return api.getAyat(nomor)
     }
+
+    override fun getAyat(idSurah: Int, page: Int): Single<BaseResponse<List<AyatItem>>> {
+        return api.getAyat(idSurah, page)
+    }
 }

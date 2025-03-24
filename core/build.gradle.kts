@@ -20,10 +20,10 @@ subprojects {
     plugins.withType(com.android.build.gradle.BasePlugin::class.java).configureEach {
         configure<BaseExtension> {
             namespace = "com.oratakashi.myquran.$name"
-            compileSdkVersion(33)
+            compileSdkVersion(34)
             defaultConfig {
                 minSdk = 22
-                targetSdk = 33
+                targetSdk = 34
                 versionCode = 1
                 versionName = project.version.toString()
 

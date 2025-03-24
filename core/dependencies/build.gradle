@@ -21,4 +21,6 @@ dependencies {
     //AndroidX Startup
     api "androidx.startup:startup-runtime:1.1.1"
 
+    api "androidx.paging:paging-runtime:3.3.6"
+    api "androidx.paging:paging-rxjava3:3.3.6"
 }

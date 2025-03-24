@@ -1,5 +1,7 @@
 package com.oratakashi.myquran.domain
 
+import androidx.paging.PagingData
+import androidx.paging.map
 import com.oratakashi.myquran.data.QuranRepository
 import com.oratakashi.myquran.domain.model.ayat.Ayat
 import com.oratakashi.myquran.domain.model.surah.Surah
@@ -15,5 +17,9 @@ class QuranInteractor(
 
     override fun getAyat(nomor: Int): Flowable<List<Ayat>> {
         return repo.getAyat(nomor).map { it.map { data -> data.toAyat() } }
+    }
+
+    override fun getAyatPaging(nomor: Int): Flowable<PagingData<Ayat>> {
+        return repo.getAyatPaging(nomor).map { it.map { data -> data.toAyat() } }
     }
 }

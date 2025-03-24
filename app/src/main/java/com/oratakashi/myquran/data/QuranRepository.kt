@@ -1,5 +1,6 @@
 package com.oratakashi.myquran.data
 
+import androidx.paging.PagingData
 import com.oratakashi.myquran.data.model.ayat.AyatEntity
 import com.oratakashi.myquran.data.model.ayat.AyatItem
 import com.oratakashi.myquran.data.model.surah.SurahEntity
@@ -10,4 +11,5 @@ import io.reactivex.rxjava3.core.Observable
 interface QuranRepository {
     fun getSurah(): Observable<List<SurahEntity>>
     fun getAyat(nomor: Int): Flowable<List<AyatEntity>>
+    fun getAyatPaging(idSurah: Int): Flowable<PagingData<AyatEntity>>
 }

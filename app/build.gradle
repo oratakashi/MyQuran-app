@@ -7,12 +7,13 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.oratakashi.myquran"
         minSdk 22
-        targetSdk 33
+        //noinspection EditedTargetSdkVersion
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -57,6 +58,7 @@ dependencies {
     //Room
     implementation "androidx.room:room-runtime:2.4.3"
     implementation "androidx.room:room-rxjava3:2.4.3"
+    implementation "androidx.room:room-paging:2.4.3"
     ksp 'androidx.room:room-compiler:2.4.3'
 
     debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"

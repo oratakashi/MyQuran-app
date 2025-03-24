@@ -1,8 +1,12 @@
 package com.oratakashi.myquran.presentation.menu.detail
 
+import android.util.Log
 import androidx.core.text.buildSpannedString
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
+import androidx.paging.LoadState
+import androidx.paging.PagingData
+import androidx.paging.map
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.oratakashi.myquran.R
@@ -25,8 +29,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>(), DetailDataContract {
 
-    private val ayatAdapter: AyatAdapter by lazy {
-        AyatAdapter {
+    private val ayatAdapter: AyatPagingAdapter by lazy {
+        AyatPagingAdapter {
             ContextDialogFragment(
                 args.data,
                 it
@@ -57,6 +61,17 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(), DetailDataContract
                 },
                 args.data.ayat.toString()
             )
+
+            ayatAdapter.addLoadStateListener { loadState ->
+                val errorState = loadState.source.append as? LoadState.Error
+                    ?: loadState.source.prepend as? LoadState.Error
+                    ?: loadState.append as? LoadState.Error
+                    ?: loadState.prepend as? LoadState.Error
+
+                errorState?.let {
+                    it.error.printStackTrace()
+                }
+            }
         }
     }
 
@@ -69,7 +84,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(), DetailDataContract
             ivInfo.onClick {
                 InfoDialogFragment(args.data).showNow(childFragmentManager, "dialog")
             }
-            viewModel.getAyat(args.data.nomor.toInt())
+            viewModel.getAyatPaging(args.data.nomor.toInt())
         }
     }
 
@@ -82,16 +97,18 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(), DetailDataContract
         binding.msvDetail.showLoadingLayout()
     }
 
-    override fun onSuccessAyat(data: StateFlow<List<Ayat>>) {
+    override fun onSuccessAyat(data: PagingData<Ayat>) {
         with(binding) {
             msvDetail.showDefaultLayout()
-            val dataList: MutableList<Ayat> = ArrayList()
-            lifecycleScope.launch {
-                data.collect {
-                    dataList.addAll(it)
-                    ayatAdapter.addAll(dataList)
-                }
-            }
+            Log.e("testing", "onSuccessAyat: ${data}", )
+            ayatAdapter.submitData(lifecycle, data)
+//            val dataList: MutableList<Ayat> = ArrayList()
+//            lifecycleScope.launch {
+//                data.collect {
+//                    dataList.addAll(it)
+//                    ayatAdapter.addAll(dataList)
+//                }
+//            }
         }
     }
 

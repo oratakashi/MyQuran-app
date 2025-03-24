@@ -11,5 +11,8 @@ data class BaseResponse<T>(
 	val message: String? = null,
 
 	@field:SerializedName("status")
-	val status: Int? = null
+	val status: Int? = null,
+
+	@field:SerializedName("meta")
+	val meta: Meta? = null
 )
